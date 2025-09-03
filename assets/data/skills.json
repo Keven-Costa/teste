@@ -1,0 +1,18 @@
+[
+  {
+    "category": "backend",
+    "name": "Java 17+",
+    "level": 90,
+    "icon": "bi bi-code-slash",
+    "id": "1756675153284",
+    "createdAt": "2025-08-31T21:19:13.284Z"
+  },
+  {
+    "category": "teste",
+    "level": 3,
+    "icon": "teste",
+    "description": "ASDFASDF",
+    "id": "1756846171115",
+    "createdAt": "2025-09-02T20:49:31.115Z"
+  }
+]

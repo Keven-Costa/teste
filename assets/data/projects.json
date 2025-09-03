@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1756675930702",
+    "img": [
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder"
+    ],
+    "title": "Keven",
+    "description": "Descrição",
+    "short_description": "Descrição curta",
+    "tag": [
+      "Tag-1",
+      "Tag-2",
+      "Tag-3",
+      "Tag-4"
+    ],
+    "features": [
+      "Funcionalidade-1",
+      "Funcionalidade-2",
+      "Funcionalidade-3"
+    ],
+    "repository_link": "https://github.com/Keven-Costa",
+    "status": "Concluído",
+    "release_date": "07/09/2025",
+    "version": "2.00",
+    "type": "Back-End",
+    "technologies_used": [
+      "Java",
+      "Python"
+    ],
+    "challenges_and_solutions": "Um dos principais desafios foi implementar o sistema de atualização em tempo real do status dos pedidos. Para resolver isso, utilizei WebSockets para notificar automaticamente os clientes e funcionários sobre mudanças no status dos pedidos.",
+    "createdAt": "2025-08-31T21:32:10.702Z",
+    "project_link": "",
+    "updatedAt": "2025-09-02T19:31:05.087Z"
+  },
+  {
+    "title": "Salve!",
+    "short_description": "Descrição bolada",
+    "description": "Decrição COMPLEXA",
+    "challenges_and_solutions": "Destemido",
+    "status": "Pausado",
+    "release_date": "16/09/2025",
+    "version": "1.6",
+    "type": "Outro",
+    "project_link": "https://github.com/Keven-Costa",
+    "repository_link": "https://github.com/Keven-Costa",
+    "createdAt": "2025-09-02T20:12:04.702Z",
+    "updatedAt": "2025-09-02T20:12:04.150Z",
+    "technologies_used": [
+      "Pensamento",
+      "guerra"
+    ],
+    "features": [
+      "DINHEIRO"
+    ],
+    "img": [
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder"
+    ],
+    "tag": [
+      "Tag-1",
+      "Tag-2",
+      "Tag-3",
+      "Tag-4"
+    ],
+    "id": "1756843924702"
+  }
+]
