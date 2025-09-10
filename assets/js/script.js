@@ -274,9 +274,9 @@ fetch(JSON_PROJECTS_FILE)
                     <h4 class="project-title">${p.title}</h4>
                     <p>${p.short_description}</p>
                     <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
+
+                        ${renderTec(p.technologies_used)}
+
                     </div>
                 </div>
             </div>
@@ -309,7 +309,7 @@ fetch(JSON_SKILLS_FILE)
                     <div class="skill-item">
                         <i class="bi bi-code-square skill-icon"></i>
                         <h4>${skill.category}</h4>
-                        <p>HTML, CSS, JavaScript, React, Angular, Vue.js</p>
+                        <p>${skill.description}</p>
                         <div class="progress">
                             <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow=${skill.level}
                                 aria-valuemin="0" aria-valuemax="100"></div>
@@ -365,3 +365,14 @@ fetch(JSON_COURSES_FILE)
         console.error('Erro ao carregar o JSON:', error);
         // Mostrar mensagem de erro para o usuário
     });
+
+
+function renderTec(tecnologias) {
+    // Usa .map() para criar um array de strings para cada tecnologia
+    const techSpans = tecnologias.map(tec => {
+        // Retorna a string HTML para cada <span>. Adicionei uma classe de exemplo para estilização.
+        return `<span class="tech-tag">${tec}</span>`;
+    });
+
+    return techSpans.join('');
+}

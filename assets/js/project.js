@@ -90,8 +90,14 @@ function populateProjectDetails(data) {
     document.getElementById('projeto-titulo-pagina').textContent = `${data.title} — PORTFÓLIO`;
     document.getElementById('project-title').textContent = data.title;
     document.getElementById('projeto-short-descricao').textContent = data.short_description;
-    document.getElementById('projeto-descricao').textContent = data.description;
-    document.getElementById('projeto-desafios').textContent = data.challenges_and_solutions;
+    let textoFormatado = data.challenges_and_solutions.replace(/^-+\s*/, '').replace(/\n/g, '<br>');
+
+    textoFormatado = data.challenges_and_solutions.replace(/^-+\s*/, '').replace(/\n/g, '<br>');
+    document.getElementById('projeto-desafios').innerHTML = textoFormatado
+
+    textoFormatado = data.description.replace(/^-+\s*/, '').replace(/\n/g, '<br>');
+    document.getElementById('projeto-descricao').innerHTML = textoFormatado
+
     document.getElementById('breadcrumb-project-name').textContent = data.title;
 
     document.getElementById('projeto-status').textContent = data.status;
@@ -122,10 +128,12 @@ function populateProjectDetails(data) {
 
     // Configurar carousel de imagens
     const carouselInner = document.getElementById('carousel-items');
+    // console.log(data)
     data.img.forEach((image, index) => {
+        console.log(image)
         const div = document.createElement('div');
         div.className = `carousel-item ${index === 0 ? 'active' : ''}`;
-        div.innerHTML = `<img src="${image.src}" class="d-block w-100" alt="${image.caption}">`;
+        div.innerHTML = `<img src="${image}" class="d-block w-100" >`;
         carouselInner.appendChild(div);
     });
 }
@@ -146,17 +154,17 @@ function loadProjectData() {
             if (!response.ok) {
                 throw new Error('Projeto não encontrado');
             }
-            console.log("salve")
+            
             return response.json();
         })
         .then(projeto => {
-            console.log("projeto encotrado")
+            
             currentProject = projeto;
             document.title = `Editar ${currentProject.title} — PORTFÓLIO`;
             document.getElementById('breadcrumb-project-name').textContent = currentProject.title;
-            document.getElementById('breadcrumb-project-link').href = `project.html?id=${currentProject.id}`;
-
-            populateViewWithProjectData();
+            
+            
+            populateProjectDetails(projeto)
         })
         .catch(error => {
             console.error('Erro ao carregar os detalhes do projeto:', error);
@@ -260,5 +268,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Popular os dados do projeto
     loadProjectData();
-    // populateProjectDetails(projectData);
+    //  populateProjectDetails(projectData);
 });

@@ -326,7 +326,8 @@ input:checked+.slider:before {
 
 .carousel-item img {
     border-radius: 10px;
-    height: 400px;
+    height: 600px;
+    width: 100%;
     object-fit: cover;
 }
 

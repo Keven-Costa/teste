@@ -14,5 +14,6 @@ assets/js/edit-project.js
 pages/add-project.html
 pages/administration.html
 pages/edit-project.html
+pages/edit-course.html
 
 app.js

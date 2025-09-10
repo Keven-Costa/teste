@@ -252,14 +252,24 @@ span,
     position: relative;
     z-index: 1;
 }
+.col-lg-6{
+        display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
 
 .about-img {
     position: relative;
     border: 3px solid var(--primary);
     border-radius: 15px;
+    width: 150px;
     overflow: hidden;
     box-shadow: 0 0 25px rgba(0, 247, 255, 0.3);
     transition: all 0.5s ease;
+
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
 }
 
 .about-img:hover {
@@ -751,4 +761,9 @@ input:checked+.slider:before {
     .section-title h2 {
         font-size: 1.8rem;
     }
+}
+
+#emoji {
+    font-size: 100px;
+    
 }
