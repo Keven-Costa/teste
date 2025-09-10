@@ -250,6 +250,9 @@ const containerProjects = document.getElementById('container-projects')
 const containerSkills = document.getElementById('container-skills')
 const containerCourses = document.getElementById('container-cursos')
 
+// const params = new URLSearchParams(window.location.search);
+// const projectId = params.get('id'); // Pega o valor do parâmetro 'id'
+
 fetch(JSON_PROJECTS_FILE)
     .then(response => {
         // Verifica se a resposta HTTP está OK
@@ -259,7 +262,7 @@ fetch(JSON_PROJECTS_FILE)
         return response.json();
     })
     .then(data => {
-
+// <a href="https://keven-costa.github.io/teste/pages/project.html?id=${p.id}" class="hero-btn">Ver Detalhes</a>
         data.forEach(p => {
             const cardString = `
         <div class="col-lg-4 col-md-6 project-item" data-category="frontend" data-tech="react">
@@ -267,7 +270,7 @@ fetch(JSON_PROJECTS_FILE)
                 <div class="project-img">
                     <img src=${p.img[0]} alt="Sistema de Gestão Inteligente">
                     <div class="project-overlay">
-                        <a href="http://localhost:3000/project/${p.id}" class="hero-btn">Ver Detalhes</a>
+                        <a href="/pages/project.html?id=${p.id}" class="hero-btn">Ver Detalhes</a>
                     </div>
                 </div>
                 <div class="project-content">

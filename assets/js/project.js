@@ -3,6 +3,8 @@ const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 const navbar = document.querySelector('.navbar');
 
+
+
 // Verificar preferência salva ou do sistema
 const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 body.setAttribute('data-theme', savedTheme);
@@ -138,18 +140,23 @@ function populateProjectDetails(data) {
     });
 }
 
+const JSON_PROJECTS_FILE = '../assets/data/projects.json';
+let project;
 // Carregar dados do projeto
 function loadProjectData() {
-    const pathname = window.location.pathname;
-    const partes = pathname.split('/');
-    const projetoId = partes[partes.length - 1];
+    // const pathname = window.location.pathname;
+    // const partes = pathname.split('/');
+    // const projetoId = partes[partes.length - 1];
 
-    if (!projetoId) {
+    const params = new URLSearchParams(window.location.search);
+    const projectId = params.get('id'); // Pega o valor do parâmetro 'id'
+
+    if (!projectId) {
         showError('ID do projeto não especificado na URL.');
         return;
     }
 
-    fetch(`/api/projects/${projetoId}`)
+    fetch(JSON_PROJECTS_FILE)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Projeto não encontrado');
@@ -157,8 +164,8 @@ function loadProjectData() {
             
             return response.json();
         })
-        .then(projeto => {
-            
+        .then(projetos => {
+            let projeto = projetos.find(p => p.id === projectId);
             currentProject = projeto;
             document.title = `Editar ${currentProject.title} — PORTFÓLIO`;
             document.getElementById('breadcrumb-project-name').textContent = currentProject.title;
